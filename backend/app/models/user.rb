@@ -4,6 +4,7 @@ class User < ApplicationRecord
     
     has_many :user_trips
     has_many :trips, through: :user_trips
+    has_many :experiences, through: :trips
 
     has_many :bookings, through: :trips
     has_many :hotels, through: :bookings
@@ -21,7 +22,6 @@ class User < ApplicationRecord
     has_many :events, through: :trips
     has_many :activities, through: :events
 
-    # has_many :experiences
 
 
 

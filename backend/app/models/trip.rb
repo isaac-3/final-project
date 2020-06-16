@@ -20,6 +20,8 @@ class Trip < ApplicationRecord
     has_many :tickets, through: :full_tickets
     has_many :airlines, through: :tickets
 
+    has_many :experiences
+
 end
 
 
