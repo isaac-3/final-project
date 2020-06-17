@@ -11,6 +11,9 @@ Event.destroy_all
 FullTicket.destroy_all
 Experience.destroy_all
 UserTrip.destroy_all
+Review.destroy_all
+ActivityReview.destroy_all
+HotelReview.destroy_all
 
 pics = ["https://reductress.com/wp-content/uploads/2019/12/defaultmacbackground.jpg", "https://i.huffpost.com/gen/1566612/thumbs/o-MOON-570.jpg?1", "https://wallpapercave.com/wp/wp2825596.jpg", "https://life1071.com/wp-content/themes/nwm/img/inspirational/3.jpg", "https://life979.com/wp-content/themes/nwm/img/inspirational/10.jpg"]
 
@@ -69,4 +72,16 @@ end
 
 5.times do
     Experience.create({trip_id: Trip.all.sample.id})
+end
+
+5.times do
+    Review.create({review: Faker::Restaurant.review , restaurant_id: Restaurant.all.sample.id, user_id: User.all.sample.id})
+end
+
+5.times do
+    ActivityReview.create({review: Faker::Restaurant.review , activity_id: Activity.all.sample.id, user_id: User.all.sample.id})
+end
+
+5.times do
+    HotelReview.create({review: Faker::Restaurant.review , hotel_id: Hotel.all.sample.id, user_id: User.all.sample.id})
 end

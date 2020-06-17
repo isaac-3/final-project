@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_010748) do
+ActiveRecord::Schema.define(version: 2020_06_17_001019) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "activity_reviews", force: :cascade do |t|
+    t.string "review"
+    t.integer "activity_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,6 +58,14 @@ ActiveRecord::Schema.define(version: 2020_06_16_010748) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "hotel_reviews", force: :cascade do |t|
+    t.string "review"
+    t.integer "hotel_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -65,6 +81,14 @@ ActiveRecord::Schema.define(version: 2020_06_16_010748) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "review"
+    t.integer "restaurant_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

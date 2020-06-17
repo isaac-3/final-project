@@ -15,16 +15,12 @@ class User < ApplicationRecord
     has_many :full_tickets, through: :trips
     has_many :tickets, through: :full_tickets
     has_many :airlines, through: :tickets
-
-    # has_many :tickets, through: :trips
-    # has_many :airlines, through: :tickets
     
     has_many :events, through: :trips
     has_many :activities, through: :events
 
-
-
-
-
+    has_many :reviews
+    has_many :activity_reviews
+    has_many :hotel_reviews
 
 end
