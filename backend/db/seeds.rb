@@ -17,7 +17,7 @@ HotelReview.destroy_all
 
 pics = ["https://reductress.com/wp-content/uploads/2019/12/defaultmacbackground.jpg", "https://i.huffpost.com/gen/1566612/thumbs/o-MOON-570.jpg?1", "https://wallpapercave.com/wp/wp2825596.jpg", "https://life1071.com/wp-content/themes/nwm/img/inspirational/3.jpg", "https://life979.com/wp-content/themes/nwm/img/inspirational/10.jpg"]
 
-
+adjectives = ['Fun', 'Amazing', 'Spectacular', 'The Best', 'Awesome', 'Incredible', 'Exciting', 'Relaxing', 'Lively', 'Entertaining']
 10.times do 
     User.create({username: Faker::Name.first_name,password: '123',address: Faker::Address.full_address,email: Faker::Internet.email, pic_url: pics.sample})
 end
@@ -43,7 +43,7 @@ end
 # end
 
 30.times do
-    Trip.create({trip_date: Time.now, name: Faker::Name.first_name })
+    Trip.create({trip_date: Time.now, name: adjectives.sample })
 end
 
 30.times do
