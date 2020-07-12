@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Popconfirm, message } from 'antd'
 import { useSelector,useDispatch } from 'react-redux'
-import { Grid, Image } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 
 function confirm(trip_board_id, book, user_id, dispatch) {
     fetch(`http://localhost:3000/trips/${trip_board_id}`,{
