@@ -5,7 +5,6 @@ class TicketsController < ApplicationController
         airline1 = Airline.find_or_create_by(name: params[:ticket][:departure][:name])
         airline2 = Airline.find_or_create_by(name: params[:ticket][:destination][:name])
         full_ticket = FullTicket.create(trip_id: params[:trip_id])
-        # byebug
         ticket1 = Ticket.create({
             date: params[:ticket][:dep_date],
             full_ticket_id: full_ticket.id,

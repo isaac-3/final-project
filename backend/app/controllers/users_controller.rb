@@ -22,11 +22,8 @@ class UsersController < ApplicationController
     end
     
     def show
-        # byebug
         user = User.find(params[:id])
-        # byebug
         render json: user, :include => [:trips => {:include => [:bookings => {:include => [:hotel]}, :reservations => {:include => [:restaurant]},:full_tickets => {:include => [:tickets => {:include => [:airline]}]}, :events => {:include => [:activity]} ]}]
-                                                                
     end
     
     def update
