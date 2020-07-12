@@ -3,7 +3,6 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Switch} from 'react-router-dom'
 import { Route } from 'react-router'
-import Test from './components/Test'
 import Home from './components/Home'
 import Navbar2 from './components/NavBar2'
 import RestaurantShow from './components/RestaurantShow'
