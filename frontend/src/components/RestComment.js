@@ -1,6 +1,6 @@
 import React from 'react';
 import { Comment, Avatar } from 'antd';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const   RestComment = (props) => {
   let user = useSelector( state => state.user)
