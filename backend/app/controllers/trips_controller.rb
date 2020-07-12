@@ -4,7 +4,6 @@ class TripsController < ApplicationController
         trip = Trip.find(params[:id])
         all_users = trip.users
         render json: all_users
-        # byebug
     end
 
     def create
@@ -18,13 +17,10 @@ class TripsController < ApplicationController
 
     def destroy
         trip = Trip.find(params[:id])
-        # byebug
         # trip.destroy
         user = User.find(params[:user_id])
-        # byebug
         new_trips = user.trips.select{ |t| t.id != trip.id}
         user.update_attribute(:trips, new_trips)
-        # byebug
         render json: user, :include => [:trips => {:include => [:bookings => {:include => [:hotel]}, :reservations => {:include => [:restaurant]},:full_tickets => {:include => [:tickets => {:include => [:airline]}]}, :events => {:include => [:activity]} ]}]
 
     end

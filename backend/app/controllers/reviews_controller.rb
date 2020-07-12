@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
             restaurant_id: restaurant.id,
             user_id: user.id
         })
-        # byebug
         render json: review, :include => [:user]
     end
 
